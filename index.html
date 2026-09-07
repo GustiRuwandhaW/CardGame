@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Card Master</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       LOGIN / REGISTER
+  ========================== -->
+
+  <section id="authPage" class="page">
+
+    <div class="auth-box">
+
+      <div class="logo">🃏</div>
+
+      <h1>Card Master</h1>
+
+      <p class="description">
+        Memory Card Game
+      </p>
+
+      <div class="auth-tabs">
+
+        <button
+          id="loginTab"
+          class="active">
+          Login
+        </button>
+
+        <button
+          id="registerTab">
+          Daftar
+        </button>
+
+      </div>
+
+      <form id="authForm">
+
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          minlength="3"
+          maxlength="20"
+          required
+        >
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          minlength="6"
+          required
+        >
+
+        <button
+          type="submit"
+          id="authButton"
+          class="main-button">
+
+          Login
+
+        </button>
+
+      </form>
+
+      <p id="authMessage"></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GAME
+  ========================== -->
+
+  <section id="gamePage" class="page hidden">
+
+    <header>
+
+      <div class="brand">
+        🃏 Card Master
+      </div>
+
+      <div class="user-area">
+
+        <span id="playerName">
+          Player
+        </span>
+
+        <button id="logoutButton">
+          Logout
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <main>
+
+      <div class="game-container">
+
+        <div class="game-header">
+
+          <div class="stat-box">
+
+            <span>SKOR</span>
+
+            <strong id="score">
+              0
+            </strong>
+
+          </div>
+
+
+          <div class="stat-box">
+
+            <span>COMBO</span>
+
+            <strong id="combo">
+              x0
+            </strong>
+
+          </div>
+
+
+          <div class="stat-box">
+
+            <span>WAKTU</span>
+
+            <strong id="timer">
+              60
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD BOARD -->
+
+        <div
+          id="cardBoard"
+          class="card-board">
+        </div>
+
+
+        <div class="game-buttons">
+
+          <button
+            id="startButton"
+            class="main-button">
+
+            Mulai Game
+
+          </button>
+
+          <button
+            id="submitButton"
+            disabled>
+
+            Simpan Skor
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           LEADERBOARD
+      ========================== -->
+
+      <aside class="leaderboard">
+
+        <h2>
+          🏆 Leaderboard
+        </h2>
+
+        <p>
+          Top 10 Players
+        </p>
+
+        <div id="leaderboard">
+          Loading...
+        </div>
+
+      </aside>
+
+    </main>
+
+  </section>
+
+
+  <div id="notification"></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

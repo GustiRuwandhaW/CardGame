@@ -1,0 +1,643 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #344b9b,
+      #11162f 65%
+    );
+
+  min-height: 100vh;
+}
+
+
+/* =========================
+   UTILITIES
+========================= */
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   AUTH PAGE
+========================= */
+
+.page {
+  min-height: 100vh;
+}
+
+
+.auth-box {
+
+  width: 90%;
+  max-width: 420px;
+
+  margin: 80px auto;
+
+  padding: 35px;
+
+  background:
+    rgba(20, 27, 60, .95);
+
+  border:
+    1px solid
+    rgba(255,255,255,.1);
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px
+    rgba(0,0,0,.4);
+}
+
+
+.logo {
+
+  font-size: 60px;
+
+  margin-bottom: 10px;
+}
+
+
+.auth-box h1 {
+
+  margin: 0;
+
+  font-size: 36px;
+}
+
+
+.description {
+
+  color: #aeb9df;
+}
+
+
+/* =========================
+   AUTH TABS
+========================= */
+
+.auth-tabs {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 5px;
+
+  background: #0d132d;
+
+  padding: 5px;
+
+  border-radius: 10px;
+
+  margin: 25px 0;
+}
+
+
+.auth-tabs button {
+
+  border: none;
+
+  background: transparent;
+
+  color: #9faad0;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+
+.auth-tabs button.active {
+
+  background: #6376ff;
+
+  color: white;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 14px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid #3b4770;
+
+  background: #0b1026;
+
+  color: white;
+
+  outline: none;
+}
+
+
+input:focus {
+
+  border-color: #7385ff;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+  cursor: pointer;
+}
+
+
+.main-button {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  color: white;
+
+  font-weight: bold;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6678ff,
+      #9a4fff
+    );
+}
+
+
+#authMessage {
+
+  min-height: 20px;
+
+  color: #ff9cac;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  padding:
+    18px 5%;
+
+  background:
+    rgba(8, 12, 30, .85);
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+
+.brand {
+
+  font-size: 22px;
+
+  font-weight: bold;
+}
+
+
+.user-area {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+#logoutButton {
+
+  padding:
+    10px 15px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  color: white;
+
+  background: #682d4a;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+  width: 94%;
+
+  max-width: 1100px;
+
+  margin: 30px auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 300px;
+
+  gap: 25px;
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+.game-container {
+
+  background:
+    rgba(15,22,50,.9);
+
+  padding: 25px;
+
+  border-radius: 22px;
+}
+
+
+.game-header {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+
+.stat-box {
+
+  text-align: center;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: #0b1128;
+}
+
+
+.stat-box span {
+
+  display: block;
+
+  font-size: 12px;
+
+  color: #9ba7cb;
+}
+
+
+.stat-box strong {
+
+  font-size: 25px;
+}
+
+
+/* =========================
+   CARD BOARD
+========================= */
+
+.card-board {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap: 12px;
+
+  max-width: 600px;
+
+  margin: auto;
+}
+
+
+.card {
+
+  aspect-ratio: 1;
+
+  perspective: 800px;
+
+  cursor: pointer;
+}
+
+
+.card-inner {
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transition:
+    transform .4s;
+
+  transform-style:
+    preserve-3d;
+}
+
+
+.card.flipped .card-inner {
+
+  transform:
+    rotateY(180deg);
+}
+
+
+.card.matched .card-inner {
+
+  transform:
+    rotateY(180deg);
+}
+
+
+.card-face {
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 15px;
+
+  backface-visibility:
+    hidden;
+
+  font-size: 35px;
+}
+
+
+.card-back {
+
+  background:
+    linear-gradient(
+      135deg,
+      #3e5295,
+      #182047
+    );
+
+  box-shadow:
+    inset 0 0 0
+    2px rgba(255,255,255,.08);
+}
+
+
+.card-front {
+
+  transform:
+    rotateY(180deg);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #dce3ff
+    );
+}
+
+
+.card.matched .card-front {
+
+  box-shadow:
+    0 0 25px
+    rgba(90,255,170,.8);
+}
+
+
+/* =========================
+   GAME BUTTONS
+========================= */
+
+.game-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+.game-buttons button {
+
+  flex: 1;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  color: white;
+
+  font-weight: bold;
+
+  background: #29375f;
+}
+
+
+.game-buttons .main-button {
+
+  background:
+    linear-gradient(
+      135deg,
+      #6678ff,
+      #9a4fff
+    );
+}
+
+
+/* =========================
+   LEADERBOARD
+========================= */
+
+.leaderboard {
+
+  background:
+    rgba(15,22,50,.9);
+
+  padding: 22px;
+
+  border-radius: 22px;
+}
+
+
+.leaderboard h2 {
+
+  margin-top: 0;
+}
+
+
+.leaderboard p {
+
+  color: #9da8ca;
+}
+
+
+.rank {
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 12px 5px;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.07);
+}
+
+
+.rank-number {
+
+  width: 30px;
+
+  color: #8794bb;
+}
+
+
+.rank-name {
+
+  flex: 1;
+}
+
+
+.rank-score {
+
+  font-weight: bold;
+
+  color: #cdd5ff;
+}
+
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+#notification {
+
+  position: fixed;
+
+  right: 20px;
+
+  bottom: 20px;
+
+  padding:
+    13px 18px;
+
+  border-radius: 10px;
+
+  background: #293760;
+
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  transition: .25s;
+}
+
+
+#notification.show {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+  main {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .leaderboard {
+
+    display: none;
+  }
+
+
+  header {
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+
+  .card-board {
+
+    gap: 7px;
+  }
+
+
+  .card-face {
+
+    font-size: 25px;
+  }
+
+}
