@@ -10,7 +10,7 @@
 ===================================================== */
 
 const API_URL =
-  "PASTE_GOOGLE_APPS_SCRIPT_URL_HERE";
+  "https://script.google.com/macros/s/AKfycbz29iamBRPspbG0hoLgHPSf03F6_gJWF5txmT_h2K3Rib-tJAcJ7P8D1YcmAFTaSSAM/exec";
 
 
 /* =====================================================
